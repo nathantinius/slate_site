@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <div class="text-center">
+    <div class="container">
+      <br />
+      <h1>Login</h1>
+      <br />
+      <form class="form_login" method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="username" name="inputUsername" class="form-control" placeholder="Username" required autofocus/>
+        <input type="password" name="inputPassword" class="form-control" placeholder="Password" required />
+
+<br /><br />
+        <input class="btn btn-primary" type="submit" value="Log in" />
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

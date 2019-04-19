@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if error %}
+{{ error }}
+<br /><br />
+{% endif %}
+
+<section>
+  <div class="text-center">
+    <div class="container">
+      <br />
+      <h1>Sign up for Slate</h1>
+      <br />
+      <form class="form_signin" method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <input type="username" name="inputUsername" class="form-control" placeholder="Username" required autofocus/>
+        <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required />
+        <input type="password" name="inputPassword" class="form-control" placeholder="Password" required />
+        <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" required />
+<br /><br />
+        <input class="btn btn-primary" type="submit" value="Sign Up!" />
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
