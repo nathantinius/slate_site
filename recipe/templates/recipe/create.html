@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Create a Recipe!</h1>
+<section>
+  <div class="text-center">
+    <div class="container">
+      <br />
+      <h1>Create a Recipe!</h1>
+      <br />
+      <form class="form_create_recipe" method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="inputRecipeName" class="form-control" placeholder="Name" required autofocus/>
+        <input type="file" name="inputRecipeImage" class="form-control" required />
+
+<br /><br />
+        <input class="btn btn-primary" type="submit" value="Create Recipe" />
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

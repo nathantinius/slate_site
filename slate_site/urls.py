@@ -25,4 +25,5 @@ urlpatterns = [
     path('', recipe.views.home, name="home"),
     path('ingredients/', include('ingredients.urls')),
     path('accounts/', include('accounts.urls')),
+    path('recipe/', include('recipe.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
